@@ -1,134 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+:root {
+  /* 三岛由纪夫美学色彩系统 */
+  --kin-kaku: #C9A227;
+  --kin-kaku-glow: rgba(201, 162, 39, 0.4);
+  --sakura-white: #F8F4F0;
+  --sakura-pale: #F0E6E0;
+  --sea-deep: #1a365d;
+  --sea-midnight: #0f172a;
+  --blood-crimson: #9B1B30;
+  --blood-wine: #722F37;
+  --ink-black: #0a0a0a;
+  --ash-grey: #2d2d2d;
+  --moon-silver: #c0c0c0;
+  --flame-orange: #FF6B35;
+  --temple-shadow: rgba(0, 0, 0, 0.7);
+  
+  /* 动态模糊色彩 */
+  --aurora-1: #ff006e;
+  --aurora-2: #8338ec;
+  --aurora-3: #3a86ff;
+  --aurora-4: #06ffa5;
+  --aurora-5: #ffbe0b;
+  
+  --background: var(--ink-black);
+  --foreground: var(--sakura-white);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --font-serif: 'Noto Serif SC', serif;
+  --font-display: 'Cinzel', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Noto Serif SC', serif;
+  overflow-x: hidden;
 }
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+/* 三岛美学 - 金阁寺火焰效果 */
+@keyframes kinkakuFlame {
+  0%, 100% {
+    filter: hue-rotate(0deg) brightness(1);
+    transform: scale(1);
+  }
+  25% {
+    filter: hue-rotate(15deg) brightness(1.2);
+    transform: scale(1.02);
+  }
+  50% {
+    filter: hue-rotate(-10deg) brightness(0.9);
+    transform: scale(0.98);
+  }
+  75% {
+    filter: hue-rotate(20deg) brightness(1.1);
+    transform: scale(1.01);
+  }
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+/* 极光流动效果 */
+@keyframes auroraFlow {
+  0% {
+    background-position: 0% 50%;
   }
-  body {
-    @apply bg-background text-foreground;
+  50% {
+    background-position: 100% 50%;
   }
-  html {
-    @apply font-sans;
+  100% {
+    background-position: 0% 50%;
   }
+}
+
+/* 樱花飘落 */
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* 水波荡漾 */
+@keyframes waterRipple {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* 文字闪烁 - 如刀光 */
+@keyframes bladeShimmer {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--kin-kaku-glow);
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 30px var(--kin-kaku), 0 0 60px var(--blood-crimson);
+  }
+}
+
+/* 呼吸效果 */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* 模糊脉冲 */
+@keyframes blurPulse {
+  0%, 100% {
+    filter: blur(80px);
+    transform: scale(1);
+  }
+  50% {
+    filter: blur(100px);
+    transform: scale(1.1);
+  }
+}
+
+/* 渐变文字 */
+.gradient-text {
+  background: linear-gradient(135deg, var(--kin-kaku) 0%, var(--blood-crimson) 50%, var(--flame-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 玻璃态效果 - 和纸质感 */
+.washi-glass {
+  background: rgba(248, 244, 240, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 162, 39, 0.1);
+}
+
+/* 金箔纹理 */
+.kinfol-texture {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(201, 162, 39, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(201, 162, 39, 0.05) 0%, transparent 50%);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ink-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--kin-kaku), var(--blood-crimson));
+  border-radius: 3px;
+}
+
+/* 选择文字样式 */
+::selection {
+  background: var(--blood-crimson);
+  color: var(--sakura-white);
 }
