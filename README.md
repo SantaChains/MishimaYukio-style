@@ -82,17 +82,10 @@ src/
 ## 本地开发
 
 ```bash
-# 安装依赖
+git clone https://github.com/SantaChains/MishimaYukio-style
+cd MishimaYukio-style
 npm install
-
-# 启动开发服务器
 npm run dev
-
-# 构建生产版本
-npm run build
-
-# 启动生产服务器
-npm run start
 ```
 
 访问 http://localhost:3000 查看效果。
@@ -127,4 +120,4 @@ vercel
 
 *「言葉は、血に変わる」*
 
-**SantaChains** © 2024
+**SantaChains** © 2026
